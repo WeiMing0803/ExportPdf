@@ -1,0 +1,100 @@
+﻿@using exportPdf.common
+@model PdfReportModel //使用RazorEngine.NetCore需要将其注释
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    @{
+        string style = TemplateGadgetProvider.Instance.Load(@"wwwroot\css\pdfReport.css");
+    }
+    <style>@Html.Raw(@style)</style>   @*使用RazorEngine.NetCore需要修改为：<style>@@Raw(@style)</style>*@
+</head>
+
+<body>
+    <div id="inner-nav"></div>
+    <div id="container">
+        <div id="profile">
+            <div id="image">
+                <img id="profile-photo" src="/img/pengyuyan.png" alt="Profile-Image">
+                <a href="#"><i class="fas fa-pen stroke-transparent"></i></a>
+            </div>
+            <p id="name">@Model.Name<br><span id="email">@Model.Email</span></p>
+            <p id="designation">前端开发工程师<br><span id="college">天将降大任于斯人也，必先苦其心志，劳其筋骨，饿其体肤，空乏其身，行拂乱其所为也，所以动心忍性，增益其所不能。——《孟子》 </span></p>
+            <div id="social-links"><a href="#"><i class="fab fa-facebook-f stroke-transparent"></i></a><a><i
+                        class="fab fa-twitter stroke-transparent"></i></a><a><i
+                        class="fab fa-linkedin-in stroke-transparent"></i></a><a><i
+                        class="fab fa-github stroke-transparent"></i></a></div>
+            <a id="edit-intro" href="#"><i class="fas fa-pen-alt blue"></i>&nbsp;&nbsp;</a>
+            <hr width="100%">
+            <div id="about">
+                <p style="display:inline;">个人详情</p>
+                <a href="#"><i class="fas fa-pen stroke-transparent-blue"></i></a>
+            </div>
+            <p id="year-graduation">预计毕业年份<br><strong>2023年6月</strong></p>
+            <p id="education">学历<br><strong>湖南大学 本科</strong></p>
+            <p id="more-about">专业<br><strong> 计算机科学与技术专业</strong></p>
+            <p id="telephone">电话<br><strong>0532-2271351</strong></p>
+            <p id="fax">传真<br><strong>+91-532-25453441</strong></p>
+        </div>
+        <div id="info-cards">
+            <div class="card">
+                <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;专业技能</p>
+                <ul>
+                    <li>
+                        <p class="tags">1. 熟练掌握HTML、CSS、JavaScript等前端基础技术</p>
+                    </li>
+                    <li>
+                        <p class="tags">2. 熟悉jQuery、Bootstrap等常用前端框架和库</p>
+                    </li>
+                    <li>
+                        <p class="tags">3. 了解Node.js、Express等后端开发技术</p>
+                    </li>
+                    <li>
+                        <p class="tags">4. 掌握Git、Webpack等常用开发工具</p>
+                    </li>
+                    <li>
+                        <p class="tags">5. 具备良好的编码风格和文档习惯</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <p><i class="fas fa-briefcase stroke-transparent"></i>&nbsp;&nbsp;&nbsp;工作检验</p>
+                <ul>
+                    <li>
+                        <p class="tags">1. 依帆网站首页制作（个人项目）<br>
+    - 使用HTML、CSS、JavaScript实现了一个响应式的网站首页<br>
+    - 使用Bootstrap进行布局和样式美化，使用jQuery实现轮播图和导航栏效果<br>
+    - 使用Webpack进行打包和优化，使用Git进行版本控制和部署</p>
+                    </li>
+                    <li>
+                        <p class="tags">2. 艺风网站后台管理系统（实习项目）<br>
+    - 参与了一个基于Node.js和Express的后台管理系统的开发<br>
+    - 负责前端页面的编写，使用EJS模板引擎渲染数据<br>
+    - 使用Ajax和Fetch进行数据交互，使用Element UI组件库提升用户体验<br>
+    - 遵循MVC架构，使用Mongoose操作MongoDB数据库</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <p><i class="fas fa-graduation-cap stroke-transparent"></i>&nbsp;&nbsp;&nbsp;自我评价</p>
+                <ul>
+                    <li>
+                        <p class="tags">具备较强的学习能力和逻辑思维能力，喜欢接触新技术和新知识</p>
+                    </li>
+                    <li>
+                        <p class="tags">具备良好的沟通能力和团队协作能力，能够积极配合团队完成任务</p>
+                    </li>
+                    <li>
+                        <p class="tags">具备一定的创新能力和解决问题能力，能够针对不同需求提出合理方案</p>
+                    </li>
+                </ul>
+                <a href="#">+ Add new</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

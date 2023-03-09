@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RazorEngine.NetCore" Version="3.1.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="22.2.0" />
+    <PackageReference Include="Spire.Doc" Version="11.2.3" />
+    <PackageReference Include="Xenirio.Component.Gutenberg" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <None Update="Views\Report\tf00002110_wac.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
